@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="AdminPanel.CustomControls.Product"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AdminPanel.CustomControls"
+             xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="320" d:DesignWidth="400" Background="White">
+    <Border x:Name="border" BorderBrush="white" BorderThickness="6" Margin="5" CornerRadius="10">
+        <Grid >
+            <md:Card Background="#c2bcac" Margin="5" Padding="10" UniformCornerRadius="10">
+                <StackPanel Orientation="Vertical" Margin="5">
+                    <!-- Name Section -->
+                    <TextBlock Text="{Binding name, StringFormat=' {0}'}"
+                               FontSize="24"
+                               FontWeight="Bold"
+                               Margin="0,0,0,10"
+                               HorizontalAlignment="Center"/>
+
+                    <!-- Description Section -->
+                    <TextBlock Text="{Binding description, StringFormat=' {0}'}"
+                               FontSize="18"
+                               FontWeight="Regular"
+                               Margin="0,0,0,10"
+                               HorizontalAlignment="Center"/>
+
+                    <!-- Price Section -->
+                    <TextBlock Text="{Binding price, StringFormat='Price: {0} RON'}"
+                               FontSize="20"
+                               FontWeight="Bold"
+                               Margin="0,10,0,0"
+                               HorizontalAlignment="Center"/>
+
+                    <!-- Stock Section -->
+                    <TextBlock Text="{Binding stock, StringFormat='Stock: {0}'}"
+                               FontSize="18"
+                               FontWeight="Regular"
+                               Margin="0,10,0,0"
+                               HorizontalAlignment="Center"/>
+
+                    <!-- Unit Section -->
+                    <TextBlock Text="{Binding unit, StringFormat='Unit: {0}'}"
+                               FontSize="18"
+                               FontWeight="Regular"
+                               Margin="0,10,0,0"
+                               HorizontalAlignment="Center"/>
+
+                    <!-- Active Section -->
+                    <TextBlock Text="{Binding active, StringFormat='Active: {0}'}"
+                               FontSize="18"
+                               FontWeight="Regular"
+                               Margin="0,10,0,0"
+                               HorizontalAlignment="Center"/>
+                    <Button Content="Edit" Margin="0,10,0,0" HorizontalAlignment="Center" Click="Button_Click" Style="{StaticResource MaterialDesignFlatDarkBgButton}"/>
+                </StackPanel>
+            </md:Card>
+        </Grid>
+    </Border>
+</UserControl>

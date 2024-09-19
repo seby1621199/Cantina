@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="AdminPanel.Order"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AdminPanel"
+             xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="150" d:DesignWidth="300">
+    <Border BorderBrush="Aqua" BorderThickness="0" Margin="10" >
+        <Grid>
+            <md:Card Background="#c2bcac">
+                <StackPanel>
+                    <ItemsControl ItemsSource="{Binding Products, RelativeSource={RelativeSource AncestorType=UserControl}}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <md:Card Margin="5" Padding="10" Background="{DynamicResource MaterialDesignCardBackground}">
+                                    <StackPanel Orientation="Vertical">
+                                        <TextBlock Text="{Binding name}" 
+                                           Style="{StaticResource MaterialDesignHeadline6TextBlock}" 
+                                           Margin="0,0,0,5"/>
+                                        <TextBlock Text="{Binding quantity, StringFormat='Stock: {0}'}" 
+                                           Style="{StaticResource MaterialDesignBody1TextBlock}"/>
+
+                                    </StackPanel>
+                                </md:Card>
+                            </DataTemplate>
+
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                    <Button Style="{StaticResource MaterialDesignFlatDarkBgButton}" Click="Button_Click">Cancel</Button>
+                </StackPanel>
+                
+            </md:Card>
+            
+        </Grid>
+    </Border>
+</UserControl>
